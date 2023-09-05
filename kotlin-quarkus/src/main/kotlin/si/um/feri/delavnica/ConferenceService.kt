@@ -21,6 +21,8 @@ class ConferenceService {
             Conference(name = "OTS 2022", startDate = LocalDate(2022, 9, 10), endDate = LocalDate(2022, 9, 11))
         val conference6 =
             Conference(name = "OTS 2023", startDate = LocalDate(2023, 9, 6), endDate = LocalDate(2023, 9, 7))
+        val conference7 =
+            Conference(name = "OTS 2024", startDate = LocalDate(2024, 9, 4), endDate = LocalDate(2024, 9, 5))
 
         createConference(conference1)
         createConference(conference2)
@@ -28,6 +30,7 @@ class ConferenceService {
         createConference(conference4)
         createConference(conference5)
         createConference(conference6)
+        createConference(conference7)
     }
 
     fun getAllConferences(): List<Conference> {
