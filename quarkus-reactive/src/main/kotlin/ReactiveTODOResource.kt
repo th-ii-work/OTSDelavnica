@@ -41,7 +41,7 @@ class ReactiveTODOResource {
     @Path("/uni-uspeh")
     @Produces(MediaType.TEXT_PLAIN)
     fun uniUspeh(): Uni<String> {
-        // TODO: Naroči se na uspešen Uni element in vrni rezultat.
+        // TODO: vrni uni z uspešnim rezultatom.
         return TODO()
     }
 
@@ -49,7 +49,7 @@ class ReactiveTODOResource {
     @Path("/uni-neuspeh")
     @Produces(MediaType.TEXT_PLAIN)
     fun uniNeuspeh(): Uni<String> {
-        // TODO: uprabi spremenljivo uspehAliNeuspeh se naročite na Uni in vrnite uspešen rezultat ali napako
+        // TODO: uprabi spremenljivo uspehAliNeuspeh uni spremeni tako, da tudi ko pride do napake vrne nadomestni niz "napaka ujeta
         return TODO()
     }
 
@@ -59,7 +59,7 @@ class ReactiveTODOResource {
     // TODO: ustvari reaktivno končno točko, ki reaktivno vrne seznam sekcij z uporabo Multi<>
     fun multiOperatorji(): Multi<String> {
         //TODO 1 naroči se na Multi element sekcije in z uporabo metode map() vse zapise pretvori v majhne črke
-        //TODO 2 subscribe() dopolni tako, da filtriraš (obdržiš) le nize, ki se začnejo z "13"
+        //TODO 2 subscribe() dopolni tako, da z metodo select() filtriraš (obdržiš) le nize, ki se začnejo z "13"
         //TODO 3 subsrcibe() dopolni tako, da z uporabo metode transform() vsem elementom na začetek dodaš niz "Sekcija: "
         //TODO 4 vrni preostale nize
         return TODO()
