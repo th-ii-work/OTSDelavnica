@@ -58,5 +58,43 @@ class ConferenceResource {
         return conferenceService.filterConferencesByStartDate(parsedStartDate)
     }
 
-    // TODO Get request za filtriranje konferenc po različnih kriterijih (npr. začetni datum)
+    // TODO Get request za filtriranje konferenc po različnih kriterijih (npr. začetni datum) -> uncomment
+    /*
+    @GET
+    @Path("/filterHighOrder")
+    @Operation(summary = "Filtrira konference po različnih kriterijih")
+    fun filterConferences(
+        @QueryParam("startDate") startDate: String?,
+        @QueryParam("futureOnly") futureOnly: Boolean?
+    ): List<Conference> {
+        val allConferences = conferenceService.getAllConferences()
+
+        // Filtriranje na podlagi začetnega datuma, če je parameter prisoten
+        val filteredConferences = if (!startDate.isNullOrEmpty()) {
+            val parsedStartDate = LocalDate.parse(startDate)
+            conferenceService.filterConferences(allConferences) { conference ->
+                conference.startDate?.let { it > parsedStartDate } ?: false
+            }
+        } else {
+            allConferences
+        }
+
+        // Filtriranje glede na futureOnly parameter
+        val filteredByFuture = if (futureOnly == true) {
+            val currentDate = LocalDate.parse(
+                Instant.fromEpochMilliseconds(System.currentTimeMillis())
+                    .toLocalDateTime(TimeZone.currentSystemDefault()).date.toString()
+            )
+            filteredConferences.filter { conference ->
+                conference.startDate?.let { it >= currentDate } ?: false
+            }
+        } else {
+            filteredConferences
+        }
+
+        // Dodatni filtri glede na potrebe
+
+        return filteredByFuture
+    }
+     */
 }
